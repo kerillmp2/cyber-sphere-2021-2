@@ -78,42 +78,32 @@ export default class SimpleRouter extends React.Component {
             return (
                 <BrowserRouter>
                     <Routes>
-                        <Route path="/">
-                            <WelcomePage onEnter={this.handleUpdate}/>
-                        </Route>
+                        <Route path="/" element={<WelcomePage onEnter={this.handleUpdate}/>}/>
                     </Routes>
                 </BrowserRouter>
             )
         }
 
-        let msg = <Route path="/messages">
-            <MessagesPage class={this.state.class}/>
-        </Route>
+        let msg = <Route path="/messages" element={<MessagesPage class={this.state.class}/>}/>
 
         return (
             <BrowserRouter>
                 <div className="h-100">
-                    <Route path="/subs">
-                        <SubsPage class={this.state.class}/>
-                    </Route>
-
-                    {msg}
-
-                    <Route path="/profile">
-                        <ProfilePage class={this.state.class}/>
-                    </Route>
-
-                    <Route path="/answers">
-                        <AnswerPage class={this.state.class}
-                                    onSendAnswer={this.handleSendAnswer}/>
-                    </Route>
                     <Routes>
-                        <Route path="/">
-                            <div className="bg-peach h-100">
-                                <Header class={this.state.class}/>
-                                <Footer/>
-                            </div>
-                        </Route>
+                        <Route path="/subs" element={<SubsPage class={this.state.class}/>}/>
+
+                        {msg}
+
+                        <Route path="/profile" element={<ProfilePage class={this.state.class}/>}/>
+
+                        <Route path="/answers" element={<AnswerPage class={this.state.class}
+                                                                    onSendAnswer={this.handleSendAnswer}/>}/>
+
+
+                        <Route path="/" element={<div className="bg-peach h-100">
+                            <Header class={this.state.class}/>
+                            <Footer/>
+                        </div>}/>
                     </Routes>
                 </div>
             </BrowserRouter>
