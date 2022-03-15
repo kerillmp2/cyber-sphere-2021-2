@@ -1,7 +1,7 @@
 import React from "react";
 import {
     BrowserRouter,
-    Switch,
+    Routes,
     Route,
 } from "react-router-dom";
 import Header from "../components/Header";
@@ -63,11 +63,11 @@ export default class SimpleRouter extends React.Component {
         if (this.state.isTimeOK === false) {
             return (
                 <BrowserRouter>
-                    <Switch>
+                    <Routes>
                         <Route path="/">
                             <EndPage/>
                         </Route>
-                    </Switch>
+                    </Routes>
                 </BrowserRouter>
             )
         }
@@ -77,11 +77,11 @@ export default class SimpleRouter extends React.Component {
             localStorage.getItem("start") === null) {
             return (
                 <BrowserRouter>
-                    <Switch>
+                    <Routes>
                         <Route path="/">
                             <WelcomePage onEnter={this.handleUpdate}/>
                         </Route>
-                    </Switch>
+                    </Routes>
                 </BrowserRouter>
             )
         }
@@ -107,14 +107,14 @@ export default class SimpleRouter extends React.Component {
                         <AnswerPage class={this.state.class}
                                     onSendAnswer={this.handleSendAnswer}/>
                     </Route>
-                    <Switch>
+                    <Routes>
                         <Route path="/">
                             <div className="bg-peach h-100">
                                 <Header class={this.state.class}/>
                                 <Footer/>
                             </div>
                         </Route>
-                    </Switch>
+                    </Routes>
                 </div>
             </BrowserRouter>
         );

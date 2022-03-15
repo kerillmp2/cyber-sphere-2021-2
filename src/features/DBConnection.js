@@ -9,14 +9,6 @@ export default function DBConnection(props) {
         if (command === null || cl === null || answer === null || time === null || correct === null) {
             return
         }
-        let newAnswer = {
-            'command': command,
-            'cl': cl,
-            'answer': answer,
-            'time': time.toString(),
-            'timeTotal': timeTotal,
-            'correct': correct
-        }
         await DataStore.save(new Todo({
             "command": command,
             "cl": cl,
@@ -36,7 +28,7 @@ export default function DBConnection(props) {
 
     return (
         <div>
-            <SimpleRouter onSendAnswer={handleSend} answers={answers}/>
+            <SimpleRouter onSendAnswer={handleSend}/>
         </div>
     );
 }
