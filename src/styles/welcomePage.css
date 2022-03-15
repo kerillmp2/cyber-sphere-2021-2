@@ -1,0 +1,56 @@
+.my-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.error{
+    color: #bf1650;
+}
+
+select {
+    border-radius: 20%;
+}
+
+textarea,
+input {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 12px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+button[type="submit"],
+input[type="submit"] {
+    border: none;
+    color: white;
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 650;
+    letter-spacing: 6px;
+    border-radius: 15px;
+}
+
+button[type="submit"]:hover,
+input[type="submit"]:hover {
+    background: #9767d1;
+    outline: none;
+}
+
+input:disabled {
+    opacity: 0.4;
+}
+
+button:hover {
+    transition: 0.3s all;
+}
+
+button:focus,
+button:hover,
+input:focus,
+select:focus{
+    outline: none;
+}
